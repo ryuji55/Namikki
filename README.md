@@ -1,4 +1,4 @@
-# surfing_nikki
+# Namikki
 
 # サービス概要
 3行で
