@@ -34,3 +34,7 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+# Ignore installed gem files.
+/vendor/bundle
+# .DS_store
+.DS_store
