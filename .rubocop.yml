@@ -1,0 +1,49 @@
+inherit_from: .rubocop_todo.yml
+
+  # 追加した規約ファイル読込 
+require:
+  - rubocop-rails
+
+AllCops:
+  # Rubyバージョン指定
+  TargetRubyVersion: 2.7.2
+  # 除外
+  Exclude:
+    - "config.ru"
+    - "vendor/**/*"
+    - "bin/**"
+    - "lib/**"
+    - "db/**/*"
+    - "config/**/*"
+    - "script/**/*"
+    - "node_modules/**/*"
+    - !ruby/regexp /old_and_unused\.rb$/
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# Admin::BaseControllerと同じ書き方を許可
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# クラスのコメント必須を除外
+Documentation:
+  Enabled: false
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
+  Enabled: false
+
+# コントローラのメソッド名にset_,get_を許可
+Naming/AccessorMethodName:
+  Exclude:
+    - "app/controllers/**/*"
+
+# 文字リテラルのイミュータブル宣言を無視
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# クォーテーションについてのチェックを無効化
+Style/StringLiterals:
+  Enabled: false
