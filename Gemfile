@@ -34,6 +34,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-rails'
   gem 'rails_best_practices', require: false
+  gem 'bullet'
 end
 
 group :development do
