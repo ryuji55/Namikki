@@ -70,6 +70,7 @@ GEM
       debug_inspector (>= 0.0.1)
     bootsnap (1.9.1)
       msgpack (~> 1.0)
+    brakeman (5.1.1)
     builder (3.2.4)
     byebug (11.1.3)
     code_analyzer (0.5.2)
@@ -228,6 +229,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootsnap (>= 1.4.4)
+  brakeman
   byebug
   jbuilder (~> 2.7)
   listen (~> 3.3)
