@@ -40,6 +40,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
 end
+group :test do
+  gem 'capybara'
+  gem 'webdrivers'
+end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
