@@ -1,31 +1,11 @@
-<div class="top-wrapper">
-  <div class="top-inner-text">
-    <h1>Namikki</h1>
-    <p>伊良湖赤羽根エリアのサーファーのためのサーフィン日記共有サービスです</p>
-    <%= form_with @board, local: true do |f| %>
-        <div class="form-group">
-        <%= f.label :ユーザー名 %>
-        <%= f.text_field :name, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-        <%= f.label :ポイント選択 %>
-        <%= f.text_field :point, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-        <%= f.label :波のサイズ %>
-        <%= f.text_field :wave_size, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-        <%= f.label :コメント %>
-        <%= f.text_field :body, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-        <%= f.label :画像投稿 %>
-        <%= f.image_field :image, class: 'form-control' %>
-        </div>
-        <div class="actions">
-        <%= f.submit '投稿', class: 'btn btn-primary' %>
-        </div>
-        <% end %>
+<div class="container">
+  <div class="row">
+    <div class="top-wrapper">
+        <div class=" col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <h1>Namikki</h1>
+        <p>伊良湖赤羽根エリアのサーファーのためのサーフィン日記共有サービスです</p>
+        <%= render 'boards/form', board: @board %>
+      </div>
+    </div>
   </div>
 </div>
