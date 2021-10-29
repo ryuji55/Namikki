@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_28_160800) do
+ActiveRecord::Schema.define(version: 2021_10_29_013552) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boards", force: :cascade do |t|
+    t.string "point"
+    t.string "wave_size"
+    t.text "body"
+    t.datetime "date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_boards_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
@@ -27,4 +38,5 @@ ActiveRecord::Schema.define(version: 2021_10_28_160800) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "boards", "users"
 end
