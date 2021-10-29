@@ -1,18 +1,18 @@
 <%= form_with model: user, local: true do |f| %>
   <div class="form-group">
-    <%= f.label :email %>
+    <%= f.label :メールアドレス %>
     <%= f.email_field :email, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :password %>
+    <%= f.label :パスワード %>
     <%= f.password_field :password, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :password_confirmation %>
+    <%= f.label :パスワード確認 %>
     <%= f.password_field :password_confirmation, class: 'form-control' %>
   </div>
   <%= f.submit '登録', class: 'btn btn-primary' %>
 <% end %>
 <div class='text-center'>
-  <%= link_to 'すでに登録が済みの方はこちら', '#' %>
+  <%= link_to 'すでに登録が済みの方はこちら', login_path %>
 </div>
