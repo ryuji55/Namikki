@@ -1,10 +1,9 @@
 class PasswordResetsController < ApplicationController
-
   def new; end
 
   def create
-    @user = User.find_by_email(params[:email])
-    @user.deliver_reset_password_instructions! if @user
+    @user = User.find_by(params[:email])
+    @user&.deliver_reset_password_instructions!
     redirect_to login_path
   end
 
