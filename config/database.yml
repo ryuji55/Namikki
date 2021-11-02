@@ -83,4 +83,4 @@ production:
   <<: *default
   database: Namikki_production
   username: Namikki
-  password: <%= ENV['NAMIKKI_DATABASE_PASSWORD'] %>
+  password: <%= ENV['otokomigakimasu'] %>
