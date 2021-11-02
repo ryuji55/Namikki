@@ -1,0 +1,16 @@
+<header>
+  <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
+  <% if logged_in? %>
+    <%= link_to 'Home', root_path, class: 'navbar-brand' %> 
+    <%= link_to 'Mypage', '#', class: 'navbar-brand' %> 
+    <%= link_to 'Namikki', '#', class: 'navbar-brand' %> 
+    <%= link_to 'Twitter', '#', class: 'navbar-brand' %> 
+    <%= link_to 'ログアウト', logout_path, method: :delete, class: 'navbar-brand' %>
+  <% else %>  
+    <%= link_to 'Home', root_path, class: 'navbar-brand' %> 
+    <%= link_to 'Namikki', users_path, class: 'navbar-brand' %> 
+    <%= link_to 'Twitter', '#', class: 'navbar-brand' %> 
+    <%= link_to 'Signin', new_user_path, class: 'navbar-brand' %>
+  <% end %>
+  </nav>
+</header>
