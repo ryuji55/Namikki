@@ -7,13 +7,14 @@
 
   <div class="row">
      <div class="col-100">
-        <div class="row">
+        <div class="row scroll-list jscroll">
           <% if @boards.present? %>
             <%= render @boards %>
           <% else %>
             <p>投稿はありません</p>
           <% end %>
       </div>
+      <%= paginate @boards %>
     </div>
   </div>
 </div>
