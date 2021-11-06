@@ -10,4 +10,12 @@ class User < ApplicationRecord
   validates :reset_password_token, uniqueness: true, allow_nil: true
 
   validates :email, uniqueness: true
+
+  def unfavorite(board)
+    favorite_boards.destroy(board)
+  end
+
+  def favorite?(board)
+    favorite_boards.include?(board)
+  end
 end
