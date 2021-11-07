@@ -2,7 +2,7 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
   has_many :boards, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  has_many :favotite_boards, through: :favorites, source: :board
+  has_many :favorite_boards, through: :favorites, source: :board
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
@@ -11,7 +11,15 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
 
-  def favorited_by?(board)
-    favorites.where(board_id: board.id).exists?
+  def own?(object)
+    id == object.user_id
+  end
+
+  def favorite(board)
+    favorite_boards << board
+  end
+
+  def favorite?(board)
+    favorite_boards.include?(board)
   end
 end
