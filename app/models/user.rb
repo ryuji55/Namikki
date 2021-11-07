@@ -11,11 +11,7 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
 
-  def unfavorite(board)
-    favorite_boards.destroy(board)
-  end
-
-  def favorite?(board)
-    favorite_boards.include?(board)
+  def favorited_by?(board)
+    favorites.where(board_id: board.id).exists?
   end
 end

@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
 def create
-    @favorites = current_user.likes.create(board_id: params[:board_id])
+    @favorites = current_user.favorites.create(board_id: params[:board_id])
     redirect_back(fallback_location: root_path)
   end
 

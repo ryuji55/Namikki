@@ -4,6 +4,11 @@ class BoardsController < ApplicationController
     @faborite = Favorite.new
   end
 
+  def create
+    @board = Board.new
+    @board.user_id = current_user.id
+  end
+
   def show
     @board = Board.find(params[:id])
   end
