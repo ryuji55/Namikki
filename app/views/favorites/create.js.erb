@@ -1,5 +1,2 @@
-$(function() {
-  console.log("OK");
-});
 $("#js-favorite-for-board-<%= @board.id %>").replaceWith("<%= j(render('boards/favorite', board: @board)) %>");
 
