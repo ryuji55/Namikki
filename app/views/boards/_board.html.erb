@@ -12,13 +12,9 @@
   <div class="card-body">
     <p class="caption">
     <% if current_user.favorite?(board) %>
-      <%= link_to board_favorite_path(id: current_user.id, board_id: board.id), id: "js-bookmark-button-for-board-#{board.id}", class:"float-right", method: :delete do %>
-        ♥<%= board.favorites.count %> いいね
-        <% end %>
+      <%= render 'unfavorite', board: board %>
     <% else %>
-      <%= link_to board_favorites_path(board_id: board.id), id: "js-bookmark-button-for-board-#{board.id}", class:"float-right", method: :post do %>
-       ♡<%= board.favorites.count %> いいね
-      <% end %>
+      <%= render 'favorite', board: board %>
     <% end %>
    </p>
     <a href="#" class="card-link">Card link</a>

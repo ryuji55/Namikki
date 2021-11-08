@@ -7,7 +7,7 @@ def create
 
   def destroy
     @favorite = Favorite.find_by(board_id: params[:board_id], user_id: current_user.id)
-    @favorite.destroy 
+    @favorite.destroy
     redirect_back(fallback_location: root_path)
   end
 end
