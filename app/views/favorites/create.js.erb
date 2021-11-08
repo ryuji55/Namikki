@@ -1,2 +1,2 @@
-$("#js-favorite-for-board-<%= @favorite.id %>").replaceWith("<%= j(render('boards/unfavorite', board: @board)) %>");
+$("#js-favorite-for-board-<%= @board.id %>").replaceWith("<%= j(render('boards/favorite', board: @board)) %>");
 
