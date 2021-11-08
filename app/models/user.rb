@@ -15,10 +15,6 @@ class User < ApplicationRecord
     id == object.user_id
   end
 
-  def favorite(board)
-    favorite_boards << board
-  end
-
   def favorite?(board)
     favorite_boards.include?(board)
   end
