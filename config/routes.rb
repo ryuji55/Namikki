@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   resources :users
   resources :boards do
+    resources :comments, only: %i[create destroy], shallow: true
     resource :favorites, only: %i[create destroy]
   end
   resources :password_resets, only: %i[new create edit update]
