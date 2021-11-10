@@ -20,6 +20,6 @@
     <a href="#" class="card-link">Card link</a>
     <a href="#" class="card-link">Another link</a>
       <%= link_to 'コメント', board_path(board) %>      
-      <%= render 'crud_menus', board: board %>
+      <%= render 'crud_menus', board: board if current_user.own?(board) %>
   </div>
 </div>

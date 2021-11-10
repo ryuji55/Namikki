@@ -24,6 +24,12 @@ class BoardsController < ApplicationController
     @comments = @board.comments.includes(:user).order(created_at: :desc)
   end
 
+  def destroy
+    @board = current_user.boards.find(params[:id])
+    @board.destroy!
+    redirect_to boards_path, success: '投稿を削除しました'
+  end
+
   private
 
   def board_params
