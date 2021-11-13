@@ -33,6 +33,7 @@ module Namikki
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Don't generate system test files.
+    config.action_view.form_with_generates_remote_forms = true
     config.generators.system_tests = nil
 
     config.generators do |g|
@@ -43,7 +44,7 @@ module Namikki
         view_specs: false,
         helper_specs: false,
         routing_specs: false,
-        request_specs: false 
+        request_specs: false
     end
   end
 end
