@@ -35,6 +35,7 @@ module Namikki
     # Don't generate system test files.
     config.action_view.form_with_generates_remote_forms = true
     config.generators.system_tests = nil
+    config.i18n.default_locale = :ja
 
     config.generators do |g|
       g.skip_routes true

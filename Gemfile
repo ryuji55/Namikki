@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'config'
 gem 'kaminari'
 gem 'rails-admin'
+gem 'rails-i18n'
 gem 'sorcery'
 
 group :development, :test do
