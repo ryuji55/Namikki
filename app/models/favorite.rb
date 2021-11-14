@@ -1,5 +1,5 @@
 class Favorite < ApplicationRecord
   belongs_to :user
   belongs_to :board
-  validates_uniqueness_of :user_id, scope: :board_id
+  validates :board_id, uniqueness: { scope: :user_id }
 end

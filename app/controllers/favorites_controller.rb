@@ -9,7 +9,7 @@ class FavoritesController < ApplicationController
     @favorite.destroy
   end
 
-   private
+  private
 
   def set_board
     @board = Board.find_by(id: params[:board_id])
