@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_29_192111) do
+ActiveRecord::Schema.define(version: 2021_11_08_145051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,26 @@ ActiveRecord::Schema.define(version: 2021_10_29_192111) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_boards_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "body", null: false
+    t.bigint "user_id", null: false
+    t.bigint "board_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["board_id"], name: "index_comments_on_board_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "board_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["board_id"], name: "index_favorites_on_board_id"
+    t.index ["user_id", "board_id"], name: "index_favorites_on_user_id_and_board_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,4 +64,8 @@ ActiveRecord::Schema.define(version: 2021_10_29_192111) do
   end
 
   add_foreign_key "boards", "users"
+  add_foreign_key "comments", "boards"
+  add_foreign_key "comments", "users"
+  add_foreign_key "favorites", "boards"
+  add_foreign_key "favorites", "users"
 end

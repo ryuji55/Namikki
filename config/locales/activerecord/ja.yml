@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      board: '掲示板'
+      comment: 'コメント'
+    attributes:
+      user:
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        name: 'ニックネーム'
+        history: 'サーフィン歴'
+        reason: 'はじめたきっかけ'
+      board:
+        point: 'ポイント'
+        date: '日付'
+        wave_size: '波のサイズ'
+        body: 'コメント'
+      comment:
+        body: 'コメント'
