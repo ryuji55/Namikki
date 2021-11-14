@@ -1,19 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Crypted password:</strong>
-  <%= @user.crypted_password %>
-</p>
-
-<p>
-  <strong>Salt:</strong>
-  <%= @user.salt %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+      <h1 class="text-center"><%= current_user.name %></h4>
+      <%= render 'shared/form', user: @user %>
+    </div>
+  </div>
+</div>
