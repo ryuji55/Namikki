@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @boards = Board.where(user_id: current_user.id).order(created_at: :desc).page(params[:page])
   end
 
   def create

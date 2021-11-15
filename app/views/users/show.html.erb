@@ -3,6 +3,8 @@
     <div class="col-lg-10 offset-lg-1">
       <h1 class="text-center"><%= current_user.name %></h4>
       <%= render 'shared/form', user: @user %>
+      <%= render partial: 'shared/mypage', collection: @boards, as: 'board' %>
+      <%= paginate @boards %>
     </div>
   </div>
 </div>
