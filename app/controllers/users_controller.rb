@@ -7,7 +7,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def show; end
+  def show
+    @user = User.find(params[:id])
+    @boards = Board.where(user_id: current_user.id).order(created_at: :desc).page(params[:page])
+  end
 
   def create
     @user = User.new(user_params)
@@ -23,5 +26,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :name)
+  end
+
+  def mypage_params
+    params.require(:user).permit(:name, :avatar, :history, :reason)
   end
 end

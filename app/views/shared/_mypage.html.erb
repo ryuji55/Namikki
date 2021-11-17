@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"><%= board.body %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= board.wave_size %></li>
+    <li class="list-group-item"><%= board.point %></li>
+    <li class="list-group-item"><%= l board.created_at, format: :long %></li>
+  </ul>
+</div>

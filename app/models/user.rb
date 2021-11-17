@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
+  has_one_attached :avatar
+
   has_many :boards, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorite_boards, through: :favorites, source: :board

@@ -12,6 +12,7 @@ ja:
         name: 'ニックネーム'
         history: 'サーフィン歴'
         reason: 'はじめたきっかけ'
+        avatar: '画像'
       board:
         point: 'ポイント'
         date: '日付'
