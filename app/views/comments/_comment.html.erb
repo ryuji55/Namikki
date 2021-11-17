@@ -1,5 +1,6 @@
 <tr id="comment-<%= comment.id %>">
   <td>
+    <%= image_tag comment.user.avatar if comment.user.avatar.attached? %>
     <h3 class="small"><%= comment.user.name %></h3>
     <div id="js-comment-<%= comment.id %>">
       <%= simple_format(comment.body) %>
