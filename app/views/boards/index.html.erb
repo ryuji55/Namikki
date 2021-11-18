@@ -1,16 +1,16 @@
 <div class="container">
-  <div class="row">
-    <div class="col-lg-10 offset-lg-1">
-      <h1 class="text-center">Namikki</h4>
-    </div>
+  <div class="col-lg-10 offset-lg-1">
+    <h1 class="text-center">Namikki</h4>
   </div>
 
-  <div class="row">
-    <% if @boards.present? %>
-      <%= render @boards %>
-    <% else %>
-      <p>投稿はありません</p>
-    <% end %>
-    <%= paginate @boards %>
+  <div class="board-list jscroll">
+    <div class="row">
+      <% if @boards.present? %>
+        <%= render @boards %>
+      <% else %>
+        <p>投稿はありません</p>
+      <% end %>
+      <%= paginate @boards %>
+    </div>
   </div>
 </div>
