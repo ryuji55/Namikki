@@ -6,7 +6,15 @@
       <%= @user.history %>
       <%= @user.reason %>
       <%= link_to 'ユーザー編集ページ', edit_profile_path %>
-      <%= render partial: 'shared/mypage', collection: @boards, as: 'board' %>
+    </div>
+  </div>
+  <div class="board-list jscroll">
+    <div class="row">
+      <% if @boards.present? %>
+        <%= render partial: 'shared/mypage', collection: @boards, as: 'board' %>
+      <% else %>
+        <p>投稿はありません</p>
+      <% end %>
       <%= paginate @boards %>
     </div>
   </div>
