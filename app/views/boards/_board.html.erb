@@ -1,5 +1,5 @@
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <%= image_tag @board.image.url, class: 'card-img-top', width: '40', height: '40' %>
   <div class="card-body">
     <h5 class="card-title"><%= board.user.name %></h5>
     <p class="card-text"><%= board.body %></p>

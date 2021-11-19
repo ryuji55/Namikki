@@ -2,7 +2,6 @@
   <div class="row">
     <div class="col-lg-10 offset-lg-1">
       <h1 class="text-center"><%= current_user.name %></h4>
-      <%= image_tag @user.avatar if @user.avatar.attached? %>
       <%= @user.history %>
       <%= @user.reason %>
       <%= render 'shared/form', user: @user %>

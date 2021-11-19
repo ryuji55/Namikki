@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-10 offset-lg-1">
       <h1 class="text-center"><%= current_user.name %></h4>
-      <%= image_tag @user.avatar if @user.avatar.attached? %>
+      <%= image_tag @user.avatar.url, class: 'rounded-circle mr15', width: '40', height: '40' %>
       <%= @user.history %>
       <%= @user.reason %>
       <%= link_to 'ユーザー編集ページ', edit_profile_path %>

@@ -2,7 +2,6 @@
   <div class="form-group">
     <%= f.label :ニックネーム %>
     <%= f.text_field :name, value: current_user.name, class: 'form-control' %>
-    <%= current_user.name %>
   </div>
   <div class="form-group">
     <%= f.label :ポイント選択 %>
@@ -18,7 +17,7 @@
   </div>
   <div class="form-group">
     <%= f.label :画像 %>
-    <%= f.text_field :image, class: 'form-control' %>
+    <%= f.file_field :image, class: 'form-control' %>
   </div>
   <div class="actions">
     <%= f.submit '投稿', class: 'btn btn-primary' %>
