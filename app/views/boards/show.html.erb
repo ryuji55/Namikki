@@ -2,7 +2,11 @@
   <div class="row">
     <div class="col-lg-10 offset-lg-1">
       <h1 class="text-center"><%= @board.user.name %></h4>
-      <%= image_tag @board.user.avatar if @board.user.avatar.attached? %>
+      <% if @board.user.avatar.url.present? %>
+        <%= image_tag @board.user.avatar.url, class: 'avatar_img', size: '300x200' %>
+      <% else %>
+        <%= image_tag(asset_pack_path("media/images/sample.jpg"), class: 'avatar_img') %>
+      <% end %>
       <%= @board.user.history %>
       <%= @board.user.reason %>
       <%= render 'crud_menus', board: @board %>
