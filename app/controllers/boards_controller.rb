@@ -33,6 +33,6 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:point, :wave_size, :body)
+    params.require(:board).permit(:point, :wave_size, :body, :image)
   end
 end

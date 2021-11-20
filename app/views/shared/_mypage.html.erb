@@ -1,5 +1,9 @@
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <% if board.image.url.present? %>
+    <%= image_tag board.image.url, class: 'card-img-top', size: '270x200' %>
+  <% else %>
+    <%= image_tag(asset_pack_path("media/images/default.jpg"), size: '270x200') %>
+  <% end %>
   <div class="card-body">
     <p class="card-text"><%= board.body %></p>
   </div>

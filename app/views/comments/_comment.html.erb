@@ -1,6 +1,10 @@
 <tr id="comment-<%= comment.id %>">
   <td>
-    <%= image_tag comment.user.avatar if comment.user.avatar.attached? %>
+      <% if comment.user.avatar.url.present? %>
+        <%= image_tag comment.user.avatar.url, class: 'avatar_img', size: '300x200' %>
+      <% else %>
+        <%= image_tag(asset_pack_path("media/images/sample.jpg"), class: 'avatar_img') %>
+      <% end %>
     <h3 class="small"><%= comment.user.name %></h3>
     <div id="js-comment-<%= comment.id %>">
       <%= simple_format(comment.body) %>
