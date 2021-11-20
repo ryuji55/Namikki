@@ -1,5 +1,9 @@
 <div class="card" style="width: 18rem;">
-  <%= image_tag @board.image.url, class: 'card-img-top', width: '40', height: '40' %>
+  <% if board.image.url.present? %>
+    <%= image_tag board.image.url, class: 'card-img-top', width: '40', height: '40' %>
+  <% else %>
+    <%= image_tag(asset_pack_path("media/images/default.jpg")) %>
+  <% end %>
   <div class="card-body">
     <h5 class="card-title"><%= board.user.name %></h5>
     <p class="card-text"><%= board.body %></p>

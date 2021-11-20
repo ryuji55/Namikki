@@ -14,5 +14,6 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+const images = require("../images", true)
 require("stylesheets/application")
 require("src/scroll")
