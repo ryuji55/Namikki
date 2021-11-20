@@ -2,7 +2,12 @@
   <div class="row">
     <div class="col-lg-10 offset-lg-1">
       <h1 class="text-center"><%= current_user.name %></h4>
-      <%= image_pack_tag @user.avatar.url, class: 'rounded-circle mr15', width: '40', height: '40' %>
+
+      <% if @user.avatar.url.present? %>
+        <%= image_tag @user.avatar.url, class: 'card-img-top', width: '40', height: '40' %>
+      <% else %>
+        <%= image_tag(asset_pack_path("media/images/sample.jpg")) %>
+      <% end %>
       <%= @user.history %>
       <%= @user.reason %>
       <%= link_to 'ユーザー編集ページ', edit_profile_path %>
