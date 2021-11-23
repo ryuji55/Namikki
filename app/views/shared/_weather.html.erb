@@ -4,7 +4,7 @@
       <%= list["weather"][0]["main"] %>
       <%= list["weather"][0]["description"] %>
       <%= list["dt_txt"] %>
-      <%= image_tag "http://openweathermap.org/img/w/#{list["icon"]}.png" %>
+      <%= image_tag "http://openweathermap.org/img/w/#{list["weather"][0]["icon"]}.png", class: 'weather_img' %>
     <% end %>
   </div>
 </div>
