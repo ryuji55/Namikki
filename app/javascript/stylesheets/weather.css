@@ -1,0 +1,4 @@
+.weather_list {
+  display: flex;
+  justify-content: space-between;
+}
