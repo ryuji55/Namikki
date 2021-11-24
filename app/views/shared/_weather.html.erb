@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <% lists.each do |list| %>
-      <%= list["weather"][0]["main"] %>
-      <%= list["weather"][0]["description"] %>
       <%= list["dt_txt"] %>
+      <%= list["weather"][0]["description"] %>
+      <p>気温<%= list["main"]["feels_like"].truncate.to_s + "℃" %></p>
       <%= image_tag "http://openweathermap.org/img/w/#{list["weather"][0]["icon"]}.png", class: 'weather_img' %>
     <% end %>
   </div>
