@@ -1,23 +1,22 @@
 <div class="container">
   <div class="row">
-    <div class="weather_list">
+    <div class="weather-list">
       <% @lists.first(4).each do |list| %>
-        <tr>
-          <td>
-            <%= list["dt_txt"].to_time.strftime('%m月 %d日''%a''%n''%H:%M')%>
-          </td>
-          <td>
-            <%= list["weather"][0]["description"] %>
-          </td>
-          <td>
-            <%= image_tag "http://openweathermap.org/img/w/#{list["weather"][0]["icon"]}.png", class: 'weather_img' %>
-          </td>
-          <td>
-            <%= list["main"]["feels_like"].truncate.to_s + "℃" %><br>
-          </td>
-        </tr>
+     <div class="lists">
+        <div class="list">
+          <%= list["dt_txt"].to_time.strftime('%m月 %d日''%a''%n''%H:%M')%>
+        </div>
+        <div class="list">
+          <%= list["weather"][0]["description"] %>
+        </div>
+        <div class="list">
+          <%= image_tag "http://openweathermap.org/img/w/#{list["weather"][0]["icon"]}.png", class: 'weather_img' %>
+        </div>
+        <div class="list">
+          <%= list["main"]["feels_like"].truncate.to_s + "℃" %><br>
+        </div>
+     </div>
       <% end %>
-    </div>
      <div class="description_img">
        <%= render 'shared/images' %>
      </div>
