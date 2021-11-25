@@ -1,6 +1,6 @@
 $(function() {
     // 対象の画像
-    let bgImg = $('.description_img img');
+    let bgImg = $('.description-img img');
     // 画像の縦横サイズ
     let bgWidth = 1200;
     let bgHeight = 900;

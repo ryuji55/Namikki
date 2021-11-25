@@ -10,15 +10,15 @@
           <%= list["weather"][0]["description"] %>
         </div>
         <div class="list">
-          <%= image_tag "http://openweathermap.org/img/w/#{list["weather"][0]["icon"]}.png", class: 'weather_img' %>
+          <%= image_tag "http://openweathermap.org/img/w/#{list["weather"][0]["icon"]}.png", class: 'weather-img' %>
         </div>
         <div class="list">
           <%= list["main"]["feels_like"].truncate.to_s + "℃" %><br>
         </div>
      </div>
       <% end %>
-     <div class="description_img">
-       <%= render 'shared/images' %>
-     </div>
+  <div class="description-img">
+    <%= render 'shared/images' %>
+  </div>
   </div>
 </div>

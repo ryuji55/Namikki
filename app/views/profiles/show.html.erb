@@ -3,9 +3,9 @@
     <div class="col-lg-10 offset-lg-1">
       <h1 class="text-center"><%= current_user.name %></h4>
       <% if @user.avatar.url.present? %>
-        <%= image_tag @user.avatar.url, class: 'avatar_img', size: '300x200' %>
+        <%= image_tag @user.avatar.url, class: 'avatar-img', size: '300x200' %>
       <% else %>
-        <%= image_tag(asset_pack_path("media/images/sample.jpg"), class: 'avatar_img') %>
+        <%= image_tag(asset_pack_path("media/images/sample.jpg"), class: 'avatar-img') %>
       <% end %>
       <%= @user.history %>
       <%= @user.reason %>
