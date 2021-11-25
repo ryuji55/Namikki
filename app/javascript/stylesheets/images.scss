@@ -12,21 +12,19 @@
   object-fit: cover; /* 縦横比固定したまま上2つの縦横の範囲内に収まるように配置する */
 }
 
-.description_img {
+.description_img { 
    position: fixed;
-   left: 0; 
+   left: 0;
    top: 0;
    width: auto; 
    min-width: 100%; 
    height: auto;
    min-height: 100%;
    z-index: -1;
-   object-fit: cover;
 }
 
 .description_img img{
-   position: relative;
-   width: 100%;
-   height: auto;
-   object-fit: cover;
+  position: relative;
+  width: 100%;
+  height: auto;
 }
