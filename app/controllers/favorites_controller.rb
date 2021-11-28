@@ -1,5 +1,6 @@
 class FavoritesController < ApplicationController
   before_action :set_board
+
   def create
     @favorite = current_user.favorites.create(board_id: params[:board_id])
   end
