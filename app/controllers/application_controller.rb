@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
   add_flash_types :success, :info, :warning, :danger
-  before_action :get_api
+  before_action :get_api, :require_login
+
+  private
+
+  def not_authenticated
+    redirect_to login_path, warning: 'ログインしてください'
+  end
 
   def get_api
     uri = URI.parse("https://api.openweathermap.org/data/2.5/forecast?id=1851259&lang=ja&units=metric&appid=#{Rails.application.credentials.weather[:api_key]}")

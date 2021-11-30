@@ -1,22 +1,18 @@
 <%= form_with model: board, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <div class="form-group">
-    <%= f.label :ニックネーム %>
-    <%= f.text_field :name, value: current_user.name, class: 'form-control' %>
+    <%= f.text_field :name, value: current_user.name, class: 'form-control', placeholder: 'ニックネーム' %>
   </div>
   <div class="form-group">
-    <%= f.label :ポイント選択 %>
-    <%= f.text_field :point, class: 'form-control' %>
+    <%= f.select :point, [['ロングビーチ'],['ロコ'], ['全日本'], ['新日本']], prompt: 'ポイントを選択してください', class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :波のサイズ %>
-    <%= f.text_field :wave_size, class: 'form-control' %>
+    <%= f.select :wave_size, [['フラット'], ['スネ〜ヒザ'], ['モモ〜コシ'], ['ハラ〜ムネ'],['肩〜頭'], ['頭オーバー〜頭半'], ['クローズ']],  prompt: '波のサイズを選択してください', class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :コメント %>
-    <%= f.text_field :body, class: 'form-control' %>
+    <%= f.text_field :body, class: 'form-control', placeholder: 'コメント' %>
   </div>
   <div class="form-group">
-    <%= f.label :画像 %>
     <%= f.file_field :image, class: 'form-control' %>
   </div>
   <div class="actions">

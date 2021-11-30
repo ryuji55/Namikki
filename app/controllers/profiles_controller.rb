@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
     if @user.update(user_params)
       redirect_to profile_path, success: 'ユーザー情報を登録しました'
     else
-      flash.now['danger'] =  '保存できませんでした'
+      flash.now['danger'] = '保存できませんでした'
       render :edit
     end
   end
