@@ -1,10 +1,11 @@
-<nav class="fixed-bottom  navbar navbar-expand-lg navbar-light bg-light style="height: "40px">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <div class="btn-group">
-      <%= link_to 'Home', root_path, class: 'navbar-brand' %>
+      <%= link_to 'Home', root_path, class: 'nav-link' %>
       <%= link_to 'Namikki', boards_path, class: 'nav-link' %>
       <%= link_to 'Twitter', '#', class: 'nav-link' %>
       <%= link_to 'Signin', new_user_path, class: 'nav-link' %>
+      <%= link_to 'Login', login_path, class: 'nav-link' %>
     </div>
   </div>
 </nav>

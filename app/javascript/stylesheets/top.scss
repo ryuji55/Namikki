@@ -3,23 +3,16 @@
   display: block;
   text-align: center;
 }
-// 天気予報
-.nav-brand {
-  font-size: 10px;
-}
-
-.nav-link {
-  font-size: 13px;
-}
+ 
 // form
 form {
-   display: block;
+ /*  display: block;
    position: fixed;
    top: 40%;
    left: 50%;
    transform: translate(-50%,-50%);
    max-width: 100vw;
-   max-height: 100vh;
+   max-height: 100vh;*/
 }
 .form-group {
   text-align: center;
@@ -27,6 +20,11 @@ form {
 
 .actions {
   text-align: center;
+}
+
+.form-links {
+  text-align: center;
+  padding-bottom: 300px;
 }
 
 input[type="text"] {
@@ -69,4 +67,9 @@ select {
 .container {
  position: relative;
  padding-top: 50px;
+}
+
+// header
+.nav-link {
+  font-size: 8px;
 }
