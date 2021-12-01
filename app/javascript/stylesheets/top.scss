@@ -1,3 +1,7 @@
+h1 {
+  color: #092237;
+}
+
 .board-link {
   text-decoration: none;
   display: block;
@@ -20,6 +24,14 @@ form {
 
 .actions {
   text-align: center;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration:none; 
+  font-weight: bold;
+  color: #092237;
+  text-shadow: 0 2px 2px #666;
 }
 
 .form-links {
