@@ -7,12 +7,22 @@
       <% else %>
         <%= image_tag(asset_pack_path("media/images/sample.jpg"), class: 'avatar-img') %>
       <% end %>
-      <%= @board.user.history %>
-      <%= @board.user.reason %>
+      <div class="history">
+        <p>サーフィン歴<%= @board.user.history %>年</p>
+      </div>
+      <div class="reason">
+        <p>はじめたきっかけ</p>
+        <%= @board.user.reason %>
+      </div>
       <%= render 'crud_menus', board: @board if current_user.own?(@board) %>
       <ul class="list-inline">
         <li class="list-inline-item"><%= l @board.created_at, format: :long  %></li>
-        <p><%= simple_format(@board.body) %></p>
+      <% if @board.image.url.present? %>
+         <%= image_tag @board.image.url, class: 'card-img-top' %>
+      <% else %>
+         <%= image_tag(asset_pack_path("media/images/default.jpg")) %>
+      <% end %>
+        <p><%= simple_format(@board.body, class: 'board-body') %></p>
       </ul>
     </div>
    </div>
