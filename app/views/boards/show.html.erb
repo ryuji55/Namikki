@@ -3,7 +3,7 @@
     <div class="col-lg-10 offset-lg-1">
       <h1 class="text-center"><%= @board.user.name %></h4>
       <% if @board.user.avatar.url.present? %>
-        <%= image_tag @board.user.avatar.url, class: 'avatar-img', size: '300x200' %>
+        <%= image_tag @board.user.avatar.url, class: 'avatar-img' %>
       <% else %>
         <%= image_tag(asset_pack_path("media/images/sample.jpg"), class: 'avatar-img') %>
       <% end %>
@@ -20,7 +20,7 @@
       <% if @board.image.url.present? %>
          <%= image_tag @board.image.url, class: 'card-img-top' %>
       <% else %>
-         <%= image_tag(asset_pack_path("media/images/default.jpg")) %>
+         <%= image_tag(asset_pack_path("media/images/default.jpg"), class: 'card-img-top') %>
       <% end %>
         <p><%= simple_format(@board.body, class: 'board-body') %></p>
       </ul>

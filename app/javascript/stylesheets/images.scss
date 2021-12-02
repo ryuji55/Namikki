@@ -30,19 +30,13 @@
    z-index: -1;
 }
 
+.description-img::after {
+  filter: brightness(200%);
+}
+
 .description-img img {
   position: relative;
   width: 100%;
   height: auto;
-}
-
-.description-img img::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: auto;
-  background: inherit;
-  filter: brightness(75%);
-  /* 最背面へ */
-  z-index: -1;
+  filter: brightness(150%);
 }
