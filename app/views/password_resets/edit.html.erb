@@ -4,16 +4,13 @@
       <h1>パスワードの再設定</h1>
       <%= form_with model: @user, url: password_reset_path(@token), method: :put do |f| %>
           <div class="form-group">
-            <%= f.label :メールアドレス %>
-            <%= @user.email %>
+            <%= @user.email, placeholder: 'メールアドレス', class: 'form-control' %>
           </div>
           <div class="form-group">
-            <%= f.label :パスワード %>
-            <%= f.password_field :password, class: 'form-control' %>
+            <%= f.password_field :password, placeholder: 'パスワード', class: 'form-control' %>
           </div>
           <div class="form-group">
-            <%= f.label :パスワード確認 %>
-            <%= f.password_field :password_confirmation, class: 'form-control' %>
+            <%= f.password_field :password_confirmation, placeholder: 'パスワード確認', class: 'form-control' %>
           </div>
           <div class="actions">
             <%= f.submit '更新', class: 'btn btn-primary' %>
