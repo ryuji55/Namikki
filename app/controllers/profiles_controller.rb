@@ -16,6 +16,12 @@ class ProfilesController < ApplicationController
     @boards = Board.includes(:user).where(user_id: current_user.id).order(created_at: :desc).page(params[:page])
   end
 
+  def destroy
+    @board = current_user.boards.find(params[:board_id])
+    @board.destroy!
+    redirect_to profile_path, success: '投稿を削除しました'
+  end
+
   private
 
   def set_user

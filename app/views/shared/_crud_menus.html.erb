@@ -1,0 +1,5 @@
+<ul class='crud-menu-btn list-inline float-right'>
+  <li class="list-inline-item">
+     <%= link_to '削除', profile_path(board_id: board.id), id: "button-delete-#{board.id}", method: :delete, data: { confirm: '投稿を削除しますか？' } %>
+  </li>
+</ul>

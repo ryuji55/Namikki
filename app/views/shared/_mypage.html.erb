@@ -19,6 +19,6 @@
     <%= link_to 'コメント', board_path(board) %>
   </div>
   <div class="card-delete-btn">
-    <%= render 'boards/crud_menus', board: board if current_user.own?(board) %>
+    <%= render 'shared/crud_menus', board: board %>
   </div>
 </div>
