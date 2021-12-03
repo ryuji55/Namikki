@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @boards = Board.where(user_id: current_user.id).order(created_at: :desc).page(params[:page])
+    @boards = Board.includes(:user).where(user_id: current_user.id).order(created_at: :desc).page(params[:page])
   end
 
   private
