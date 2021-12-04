@@ -15,15 +15,9 @@
   <div class="card-comment">
     <p><%= board.body %></p>
   </div>
-  <div class="caption">
-    <% if current_user.favorites.find_by(board_id: board.id) %>
-      <%= render 'unfavorite', board: board %>
-    <% else %>
-      <%= render 'favorite', board: board %>
-    <% end %>
-    <%= link_to 'コメント', board_path(board) %>
-  </div>
-  <div class="card-delete-btn">
-    <%= render 'crud_menus', board: board if current_user.own?(board) %>
-  </div>
+  <% if logged_in? %>
+    <%= render 'login_index', board: board %>
+  <% else %>
+    <%= render 'before_login_index' %>
+  <% end %>
 </div>
