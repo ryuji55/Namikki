@@ -1,0 +1,52 @@
+//  コメントページ
+.board-body {
+  font-weight: bold;
+  color: #092237;
+}
+
+#js-new-comment-body {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.comment-css {
+  font-weight: bold;
+  color: #092237;
+}
+
+// Namikkiページ
+.card {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
+  background-color: #e8ebe7; 
+}
+
+.card-body {
+  font-size: 15px;
+  font-weight: bold;
+  color: #092237;
+}
+
+.card-comment {
+  font-size: 15px;
+  font-weight: bold;
+  color: #4977bc;
+}
+
+.caption {
+  text-align: right;
+}
+
+.condition {
+  text-align: right;
+}
+
+.board-delete {
+  text-align: right;
+}
+
+.card-delete-btn {
+  text-align: right;
+}

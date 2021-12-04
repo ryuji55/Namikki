@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     resource :favorites, only: %i[create destroy]
   end
   resources :password_resets, only: %i[new create edit update]
-  resource :profile, only: %i[show edit update]
+  resource :profile, only: %i[show edit update destroy]
 end

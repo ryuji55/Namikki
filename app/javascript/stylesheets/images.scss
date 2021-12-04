@@ -5,10 +5,17 @@
   object-fit: cover; /* 縦横比固定したまま上2つの縦横の範囲内に収まるように配置する */
 }
 
+.comment-avatar-img {
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  width: 70px;  /* 縦横を同じ値にする */
+  height: 70px;  /* 縦横を同じ値にする */
+  object-fit: cover; /* 縦横比固定したまま上2つの縦横の範囲内に収まるように配置する */
+}
+
 .weather-img {
   border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
-  width: 100px;  /* 縦横を同じ値にする */
-  height: 100px;  /* 縦横を同じ値にする */
+  width: 60px;  /* 縦横を同じ値にする */
+  height: 60px;  /* 縦横を同じ値にする */
   object-fit: cover; /* 縦横比固定したまま上2つの縦横の範囲内に収まるように配置する */
 }
 
@@ -23,8 +30,13 @@
    z-index: -1;
 }
 
+.description-img::after {
+  filter: brightness(200%);
+}
+
 .description-img img {
   position: relative;
   width: 100%;
   height: auto;
+  filter: brightness(150%);
 }

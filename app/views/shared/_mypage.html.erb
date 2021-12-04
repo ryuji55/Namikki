@@ -1,15 +1,24 @@
 <div class="card" style="width: 18rem;">
   <% if board.image.url.present? %>
-    <%= image_tag board.image.url, class: 'card-img-top', size: '270x200' %>
+    <%= image_tag board.image.url, class: 'card-img-top' %>
   <% else %>
-    <%= image_tag(asset_pack_path("media/images/default.jpg"), size: '270x200') %>
+    <%= image_tag(asset_pack_path("media/images/default.jpg"), class: 'card-img-top') %>
   <% end %>
+  <p class="list-group-item"><%= l board.created_at, format: :long %></p>
   <div class="card-body">
-    <p class="card-text"><%= board.body %></p>
+    <p><%= board.user.name %></p>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><%= board.wave_size %></li>
-    <li class="list-group-item"><%= board.point %></li>
-    <li class="list-group-item"><%= l board.created_at, format: :long %></li>
-  </ul>
+  <div class="condition">
+    <b><%= board.point %></b>
+    <b><%= board.wave_size %></b>
+  </div>
+  <div class="card-comment">
+    <p><%= board.body %></p>
+  </div>
+  <div class="caption">
+    <%= link_to 'コメント', board_path(board) %>
+  </div>
+  <div class="card-delete-btn">
+    <%= render 'shared/crud_menus', board: board %>
+  </div>
 </div>

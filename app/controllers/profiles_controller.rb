@@ -5,15 +5,21 @@ class ProfilesController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to profile_path, success: 'ユーザー情報を登録しました'
+      redirect_to profile_path, success: 'プロフィールを編集しました'
     else
-      flash.now['danger'] = '保存できませんでした'
+      flash.now['danger'] = 'プロフィールの編集に失敗しました'
       render :edit
     end
   end
 
   def show
-    @boards = Board.where(user_id: current_user.id).order(created_at: :desc).page(params[:page])
+    @boards = Board.includes(:user).where(user_id: current_user.id).order(created_at: :desc).page(params[:page])
+  end
+
+  def destroy
+    @board = current_user.boards.find(params[:board_id])
+    @board.destroy!
+    redirect_to profile_path, success: '投稿を削除しました'
   end
 
   private

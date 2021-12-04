@@ -4,8 +4,7 @@
       <h1>パスワードの再設定</h1>
         <%= form_with url: password_resets_path, local: true do |f| %>
           <div class="form-group">
-            <%= f.label :メールアドレス %>
-            <%= f.text_field :email, class: 'form-control' %>
+            <%= f.text_field :email, placeholder: 'メールアドレス', class: 'form-control' %>
           </div>
           <div class="actions">
             <%= f.submit '送信', class: 'btn btn-primary' %>
