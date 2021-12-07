@@ -12,7 +12,7 @@
         <div class="list">
           <%= image_tag "http://openweathermap.org/img/w/#{list["weather"][0]["icon"]}.png", class: 'weather-img' %>
         </div>
-        <div class="list">
+        <div class="list-feelslike">
           <%= list["main"]["feels_like"].truncate.to_s + "℃" %><br>
         </div>
      </div>

@@ -97,7 +97,7 @@ select {
 
 // header
 .nav-link {
-  font-size: 8px;
+  font-size: 55%;
 }
 
 // 天気予報
@@ -105,4 +105,29 @@ select {
   font-weight: bold;
   color: #092237;
   text-shadow: 0 2px 2px #666;
+}
+
+.list-feelslike {
+  font-weight: bold;
+  color: #092237;
+  text-shadow: 0 2px 2px #666;
+  margin-bottom: 70%;
+}
+
+// footer
+footer {
+  margin-left: 10%;
+}
+
+.footer-table {
+  text-decoration:none; 
+  font-weight: bold;
+  color: #092237;
+  font-size: 70%;
+}
+
+.copy-right {
+  text-decoration:none; 
+  font-weight: bold;
+  color: #092237;
 }
