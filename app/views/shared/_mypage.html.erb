@@ -1,8 +1,8 @@
 <div class="card" style="width: 18rem;">
   <% if board.image.url.present? %>
-    <%= image_tag board.image.url, class: 'card-img-top' %>
+    <%= image_tag board.image.url, class: 'boards-img' %>
   <% else %>
-    <%= image_tag(asset_pack_path("media/images/default.jpg"), class: 'card-img-top') %>
+    <%= image_tag(asset_pack_path("media/images/default.jpg"), class: 'boards-img') %>
   <% end %>
   <p class="list-group-item"><%= l board.created_at, format: :long %></p>
   <div class="card-body">
