@@ -1,6 +1,27 @@
-h1 {
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1.title {
   color: #092237;
   text-align: center;
+  font-family: 'Tsukushi B Round Gothic';
+  font-weight: bold;
+}
+
+h1 {
+  color: #092237;
+  font-weight: bold;
+  text-align: center;
+}
+
+p {
+  font-family: Klee;
+  font-weight: bold;
 }
 
 .board-link {
@@ -97,7 +118,7 @@ select {
 
 // header
 .nav-link {
-  font-size: 55%;
+  font-size: 50%;
 }
 
 // 天気予報

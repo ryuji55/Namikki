@@ -16,9 +16,9 @@
     <p><%= board.body %></p>
   </div>
   <div class="caption">
-    <%= link_to 'コメント', board_path(board) %>
-  </div>
-  <div class="card-delete-btn">
+    <%= link_to board_path(board) do %>
+      <i class="far fa-comment-dots"></i>
+    <% end %>
     <%= render 'shared/crud_menus', board: board %>
   </div>
 </div>

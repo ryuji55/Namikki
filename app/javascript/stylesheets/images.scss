@@ -20,14 +20,14 @@
 }
 
 .description-img { 
-   position: fixed;
-   left: 0;
-   top: 0;
-   width: auto; 
-   min-width: 100%; 
-   height: auto;
-   min-height: 100%;
-   z-index: -1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: auto; 
+  min-width: 100%; 
+  height: auto;
+  min-height: 100%;
+  z-index: -1;
 }
 
 .description-img::after {

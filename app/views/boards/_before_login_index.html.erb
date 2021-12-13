@@ -1,4 +1,6 @@
 <div class="caption">
-  <%= link_to 'いいね', login_path  %>
-  <%= link_to 'コメント', login_path %>
+  <%= link_to '♡', login_path, class: 'fav-btn' %>
+  <%= link_to login_path do %>
+    <i class="far fa-comment-dots"></i>
+  <% end %>
 </div>
