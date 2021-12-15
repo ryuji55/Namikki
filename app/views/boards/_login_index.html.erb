@@ -5,7 +5,7 @@
      <%= render 'favorite', board: board %>
    <% end %>
      <%= link_to board_path(board) do %>
-       <i class="far fa-comment-dots"></i>
+       <i class="far fa-comment-dots"></i><%= board.comments.count %>
      <% end %>
   <%= render 'crud_menus', board: board if current_user.own?(board) %>
 </div>
