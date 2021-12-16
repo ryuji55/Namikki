@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorite_boards, through: :favorites, source: :board
   has_many :comments, dependent: :destroy
+  has_many :active_notices, class_name: 'Notice', foreign_key: 'visitor_id', dependent: :destroy, inverse_of: 'visitor'
+  has_many :passive_notices, class_name: 'Notice', foreign_key: 'visited_id', dependent: :destroy, inverse_of: 'visited'
 
   validates :password, length: { minimum: 4 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
