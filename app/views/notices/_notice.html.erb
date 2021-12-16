@@ -1,0 +1,31 @@
+<% visitor = notice.visitor %>
+<% visited = notice.visited %>
+<div class="col-md-6.mx-auto">
+  <div class="form-inline">
+    <span>
+      <%= link_to user_path(visitor) do %>
+        <%= image_tag avatar_url(visitor).to_s, class: "icon_mini" %>
+        <strong>
+          <%= visitor.name %>
+          <%= 'さんが' %>
+
+        <% when 'favorite' then %>
+          <%= link_to 'あなたの投稿', notice.board, style: "font-weight: bold;" %>
+          <%= "にいいねしました" %>
+        <% when 'comment' then %>
+          <% if notice.post.user_id == visited.id %>
+            <%= link_to "あなたの投稿", notice.post, style: "font-weight: bold;" %>
+          <% else %>
+            <span>
+              <%= link_to board_path(notice.post) do %>
+                <%= image_tag avatar_url(notice.post.user).to_s, class: "icon_mini" %> 
+                <strong>
+                  <%= notice.post.user.name + 'さんの投稿' %>
+                  <%= "にコメントしました" %>
+                  <p class="text-muted.mb-0">
+                  <%= Comment.find_by(id: notice.comment_id)&.comment %>
+
+                  <div class="small.text-muted.text-right">
+                    <%= time_ago_in_words(notice.created_at).upcase %>
+                    <hr>
+          <% end %>
