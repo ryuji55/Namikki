@@ -6,7 +6,7 @@ class Board < ApplicationRecord
   has_many :users, through: :favorites
   has_many :comments, dependent: :destroy
 
-  def create_notice_favorite(current_user)
+  def create_notice_favorite!(current_user)
     # すでに「いいね」されているか検索
     temp = Notice.where(["visitor_id = ? and visited_id = ? and board_id = ? and action = ? ", current_user.id, user_id, id, 'favorite'])
     # いいねされていない場合のみ、通知レコードを作成
@@ -16,10 +16,12 @@ class Board < ApplicationRecord
         visited_id: user_id,
         action: 'favorite'
       )
-    end
     # 自分の投稿に対するいいねの場合は、通知済みとする
-    notice.checkd = true if notice.visitor_id == notice.visited_id
-    notice.save if notice.valid?
+      notice.checked = true if notice.visitor_id == notice.visited_id
+      notice.save if notice.valid?
+    else
+      return
+    end
   end
 
   def create_notice_comment!(current_user, comment_id)
