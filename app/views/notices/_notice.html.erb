@@ -32,6 +32,7 @@
               <% end %>
               <%= notice.board.user.name + 'さんの投稿' %>
             <% end %>
+        <% end %>
             <strong>
               <%= "にコメントしました" %>
             </strong>
@@ -39,7 +40,7 @@
               <%= Comment.find_by(id: notice.comment_id)&.comment %>
             </p>
           </span>
-       <% end %>
+     <% end %>
           
      <div class="small.text-muted.text-right">
         <%= time_ago_in_words(notice.created_at).upcase %>
