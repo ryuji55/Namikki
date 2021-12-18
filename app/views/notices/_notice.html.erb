@@ -3,7 +3,7 @@
 <div class="col-md-6.mx-auto">
   <div class="form-inline">
     <span>
-      <%= link_to user_path(visitor) do %>
+      <%= link_to notice.board do %>
         <% if visitor.avatar.url.present? %>
           <%= image_tag visitor.avatar.url, class: 'notice-avatar-img' %>
         <% else %>
@@ -41,7 +41,7 @@
           </span>
      <% end %>
           
-     <div class="small.text-muted.text-right">
+     <div class="notice-time">
        <p><%= time_ago_in_words(notice.created_at).upcase %>前</p>
      </div>
   </div>
