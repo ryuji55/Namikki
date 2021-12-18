@@ -1,6 +1,6 @@
 class NoticesController < ApplicationController
   def index
-    @notices = current_user.passive_notices.page(params[:page]).per(20)
+    @notices = current_user.passive_notices.includes(:visitor, :board).page(params[:page])
     @notices.where(checked: false).each do |notice|
       notice.update(checked: true)
     end
