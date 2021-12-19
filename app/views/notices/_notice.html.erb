@@ -1,0 +1,53 @@
+<% visitor = notice.visitor %>
+<% visited = notice.visited %>
+<div class="container">
+  <div class="row">
+    <div class="top-wrapper">
+      <div class=" col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <p class="notice-p">通知一覧</p>
+        <span>
+          <%= link_to notice.board do %>
+            <% if visitor.avatar.url.present? %>
+              <%= image_tag visitor.avatar.url, class: 'notice-avatar-img' %>
+            <% else %>
+              <%= image_tag(asset_pack_path("media/images/sample.jpg"), class: 'notice-avatar-img') %>
+            <% end %>
+          <strong>
+            <%= visitor.name %>
+            <%= 'さんが' %>
+          </strong>
+          <% end %>
+        </span>
+        <% case notice.action %>
+          <% when 'favorite' %>
+            <%= link_to 'あなたの投稿', notice.board, style: "font-weight: bold;" %>
+            <strong>
+            <%= "にいいねしました" %>
+            </strong>
+          <% when 'comment' %>
+            <% if notice.board.user_id == visited.id %>
+              <%= link_to "あなたの投稿", notice.board, style: "font-weight: bold;" %>
+            <% else %>
+              <span>
+                <%= link_to board_path(notice.board) do %>
+                  <% if visitor.avatar.url.present? %>
+                    <%= image_tag visitor.avatar.url, class: 'notice-avatar-img' %>
+                  <% else %>
+                    <%= image_tag(asset_pack_path("media/images/sample.jpg"), class: 'notice-avatar-img') %>
+                  <% end %>
+                  <%= notice.board.user.name + 'さんの投稿' %>
+                <% end %>
+            <% end %>
+                <strong>
+                  <%= "にコメントしました" %>
+                </strong>
+              </span>
+         <% end %>
+              
+         <div class="notice-time">
+           <p><%= time_ago_in_words(notice.created_at).upcase %>前</p>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>

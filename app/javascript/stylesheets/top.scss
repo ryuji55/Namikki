@@ -103,6 +103,7 @@ select {
   left: 50%;
   top: 3%;
   font-size: 15px;
+  z-index: 2;
 }
 
 // error-messages
@@ -121,6 +122,10 @@ select {
   font-size: 50%;
 }
 
+.navbar {
+ position: fixed;
+ z-index: 1;
+}
 // 天気予報
 .list {
   font-weight: bold;
@@ -151,4 +156,8 @@ footer {
   text-decoration:none; 
   font-weight: bold;
   color: #092237;
+}
+
+.twitter-bottom {
+  font-size: 35px;
 }

@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[new create edit update]
   resource :profile, only: %i[show edit update destroy]
   resources :contacts, only: %i[create new]
+  resources :notices, only: %i[index]
 end

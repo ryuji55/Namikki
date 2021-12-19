@@ -1,7 +1,9 @@
 class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
+    @board = @comment.board
     @comment.save
+    @board.create_notice_comment!(current_user, @comment.id)
   end
 
   def destroy
