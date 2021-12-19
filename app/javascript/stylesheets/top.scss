@@ -17,7 +17,7 @@ h1 {
   color: #092237;
   font-weight: bold;
   text-align: center;
-  margin-top: 5%;
+  margin-top: 10%;
 }
 
 p {
@@ -123,14 +123,20 @@ select {
   font-size: 80%;
 }
 
+.btn-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
 .navbar {
  position: fixed;
  z-index: 1;
  width: 100%;
 }
 
-.btn-group {
-  margin: auto;
+.container-fluid {
+  display: flex;
 }
 // 天気予報
 .list {
