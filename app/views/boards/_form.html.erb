@@ -4,7 +4,7 @@
     <%= f.text_field :name, value: current_user.name, class: 'form-control', placeholder: 'ニックネーム' %>
   </div>
   <div class="form-group">
-    <%= f.select :point, [['ロングビーチ'],['ロコ'], ['全日本'], ['新日本']], prompt: 'ポイントを選択してください', class: 'form-control' %>
+    <%= f.select :point, [['ロングビーチ'],['ロコ'], ['全日本'], ['新日本'], ['ミラー'], ['チキン'], ['伊古部'], ['寺沢'], ['小島'], ['細谷'], ['先端'], ['その他']], prompt: 'ポイントを選択してください', class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.select :wave_size, [['フラット'], ['スネ〜ヒザ'], ['モモ〜コシ'], ['ハラ〜ムネ'],['肩〜頭'], ['頭オーバー〜頭半'], ['クローズ']],  prompt: '波のサイズを選択してください', class: 'form-control' %>
