@@ -30,8 +30,8 @@
             <% else %>
               <span>
                 <%= link_to board_path(notice.board) do %>
-                  <% if visitor.avatar.url.present? %>
-                    <%= image_tag visitor.avatar.url, class: 'notice-avatar-img' %>
+                  <% if notice.board.user.avatar.url.present? %>
+                    <%= image_tag notice.board.user.avatar.url, class: 'notice-avatar-img' %>
                   <% else %>
                     <%= image_tag(asset_pack_path("media/images/sample.jpg"), class: 'notice-avatar-img') %>
                   <% end %>
