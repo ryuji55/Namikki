@@ -16,9 +16,14 @@
     <p><%= board.body %></p>
   </div>
   <div class="caption">
-    <%= link_to board_path(board) do %>
-      <i class="far fa-comment-dots"></i>
+    <% if current_user.favorites.find_by(board_id: board.id) %>
+      <%= render 'boards/unfavorite', board: board %>
+    <% else %>
+      <%= render 'boards/favorite', board: board %>
     <% end %>
-    <%= render 'shared/crud_menus', board: board %>
+     <%= link_to board_path(board) do %>
+       <i class="far fa-comment-dots"></i><%= board.comments.count %>
+     <% end %>
+     <%= render 'shared/crud_menus', board: board %>
   </div>
 </div>
