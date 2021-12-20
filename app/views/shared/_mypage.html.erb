@@ -1,20 +1,22 @@
 <div class="card" style="width: 18rem;">
-  <% if board.image.url.present? %>
-    <%= image_tag board.image.url, class: 'boards-img' %>
-  <% else %>
-    <%= image_tag(asset_pack_path("media/images/default.jpg"), class: 'boards-img') %>
+  <%= link_to board_path(board) do %>
+    <% if board.image.url.present? %>
+      <%= image_tag board.image.url, class: 'boards-img' %>
+    <% else %>
+      <%= image_tag(asset_pack_path("media/images/default.jpg"), class: 'boards-img') %>
+    <% end %>
+    <p class="list-group-item"><%= l board.created_at, format: :long %></p>
+    <div class="card-body">
+      <p><%= board.user.name %></p>
+    </div>
+    <div class="condition">
+      <b><%= board.point %></b>
+      <b><%= board.wave_size %></b>
+    </div>
+    <div class="card-comment">
+      <p><%= board.body %></p>
+    </div>
   <% end %>
-  <p class="list-group-item"><%= l board.created_at, format: :long %></p>
-  <div class="card-body">
-    <p><%= board.user.name %></p>
-  </div>
-  <div class="condition">
-    <b><%= board.point %></b>
-    <b><%= board.wave_size %></b>
-  </div>
-  <div class="card-comment">
-    <p><%= board.body %></p>
-  </div>
   <div class="caption">
     <% if current_user.favorites.find_by(board_id: board.id) %>
       <%= render 'boards/unfavorite', board: board %>
