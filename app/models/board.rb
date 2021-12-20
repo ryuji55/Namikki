@@ -6,6 +6,9 @@ class Board < ApplicationRecord
   has_many :users, through: :favorites
   has_many :comments, dependent: :destroy
 
+  validates :point, presence: true
+  validates :wave_size, presence: true
+
   def create_notice_favorite!(current_user)
     # すでに「いいね」されているか検索
     temp = Notice.where(["visitor_id = ? and visited_id = ? and board_id = ? and action = ? ", current_user.id, user_id, id, 'favorite'])

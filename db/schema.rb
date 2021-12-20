@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_15_123107) do
+ActiveRecord::Schema.define(version: 2021_12_20_051637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "boards", force: :cascade do |t|
-    t.string "point"
-    t.string "wave_size"
+    t.string "point", null: false
+    t.string "wave_size", null: false
     t.text "body"
     t.datetime "date"
     t.bigint "user_id", null: false
