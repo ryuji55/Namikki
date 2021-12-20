@@ -1,6 +1,8 @@
 <div class="caption">
-  <%= link_to '♡', login_path, class: 'fav-btn' %>
+  <%= link_to login_path, class: 'fav-btn' do %>
+     ♡<%= board.favorites.count %>
+ <% end %>
   <%= link_to login_path do %>
-    <i class="far fa-comment-dots"></i>
+    <i class="far fa-comment-dots"></i><%= board.comments.count %>
   <% end %>
 </div>

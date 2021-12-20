@@ -18,6 +18,6 @@
   <% if logged_in? %>
     <%= render 'login_index', board: board %>
   <% else %>
-    <%= render 'before_login_index' %>
+    <%= render 'before_login_index', board: board %>
   <% end %>
 </div>
