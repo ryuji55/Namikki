@@ -7,7 +7,7 @@
     <% end %>
     <p class="list-group-item"><%= l board.created_at, format: :long %></p>
     <div class="card-body">
-      <p><%= board.user.name %></p>
+      <p class="board-name"><%= board.user.name %></p>
    </div>
     <div class="card-comment">
       <p><%= board.body %></p>

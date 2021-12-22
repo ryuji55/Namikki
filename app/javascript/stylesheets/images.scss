@@ -37,15 +37,11 @@
   z-index: -1;
 }
 
-.description-img::after {
-  filter: brightness(200%);
-}
-
 .description-img img {
   position: relative;
   width: 100%;
   height: auto;
-  filter: brightness(150%);
+  filter: saturate(200%) brightness(120%) contrast(200%);
 }
 
 .boards-img {

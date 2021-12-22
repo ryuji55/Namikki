@@ -7,7 +7,7 @@
         <%= link_to 'Namikkiを投稿する', new_board_path, class: 'board-link' %>
         <%= render 'shared/weather' %>
         <% if logged_in? %>
-          <%= link_to 'Mypageを見てみる', profile_path, class: 'board-link', style: 'margin-bottom: 20%' %>
+          <%= link_to 'まずプロフィールを登録する', edit_profile_path, class: 'board-link', style: 'margin-bottom: 20%' %>
         <% else %>
           <%= link_to '登録する前にNamikkiを見てみる', boards_path, class: 'board-link', style: 'margin-bottom: 20%' %>
         <% end %>
