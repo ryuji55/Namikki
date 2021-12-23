@@ -1,14 +1,15 @@
 .weather-list {
   display: flex;
   justify-content: space-between;
-  padding-top: 20px;
-}
-
-.list {
-  font-size: 10px;
+  margin-top: 10%;
+  overflow-x: auto;
 }
 
 .list-img {
-  width: 40px;
-  height: 50px;
+  width: 50%;
+  height: 50%;
+}
+
+.lists {
+  margin: 3% 0 3% 8%;
 }

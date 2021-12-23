@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="weather-list">
-      <% @lists.first(4).each do |list| %>
+      <% @lists.first(7).each do |list| %>
      <div class="lists">
         <div class="list">
-          <%= list["dt_txt"].to_time.strftime('%m月 %d日''%a''%n''%H:%M')%>
+          <%= list["dt_txt"].to_time.strftime('%m/%d''%a''%n''%H:%M')%>
         </div>
         <div class="list">
           <%= list["weather"][0]["description"] %>
