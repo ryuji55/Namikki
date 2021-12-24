@@ -11,7 +11,7 @@ h1.title {
   text-align: center;
   font-family: 'Tsukushi B Round Gothic';
   font-weight: bold;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 
 h1 {
@@ -23,15 +23,29 @@ h1 {
 }
 
 p {
+  color: #092237;
   font-family: Klee;
-  font-weight: bold;
-  margin-bottom: 10%
+}
+
+p.top {
+  margin-bottom: 20%;
+}
+
+.top-layout {
+  text-align: center;
 }
 
 .board-link {
+  display: inline-block;
+  padding: 16px 24px;
   text-decoration: none;
-  display: block;
-  text-align: center;
+  border: 1px;
+  background: #c9be72;
+  color: #092237;
+  box-shadow: 0px 2px 4px #a69940;
+  transition: box-shadow .3s;
+  border-radius: 25px;
+  margin-bottom: 10%;
 }
  
 // form
@@ -54,9 +68,19 @@ textarea.form-control {
 }
 
 a {
-  text-decoration:none; 
-  font-weight: bold;
+  font-family: Klee;
+  text-decoration: none; 
   color: #092237;
+  text-shadow: 
+    0.3px 0.3px 0, 
+    0.3px -0.3px 0px,
+    -0.3px 0.3px 0,
+    -0.3px -0.3px 0px,
+    0.3px 0px 0px,
+    0px 0.3px 0px,
+    -0.3px 0px 0px,
+    0px -0.3px 0px;
+  letter-spacing: 1px;
 }
 
 .form-links {
@@ -123,7 +147,6 @@ select {
 
 // header
 .nav-link {
-  font-size: 80%;
   color: #4977bc; 
 }
 
@@ -163,18 +186,40 @@ footer {
 }
 
 .footer-table {
+  position: relative;
   text-decoration:none; 
   font-weight: bold;
   color: #092237;
   font-size: 70%;
+  margin-left: 10%;
+}
+
+.footer-link {
+  margin-bottom: 3%;
+  font-size: 120%;
 }
 
 .copy-right {
-  text-decoration:none; 
-  font-weight: bold;
+  text-decoration: none; 
   color: #092237;
+  font-size: 120%;
+  text-shadow: 
+    0.3px 0.3px 0, 
+    0.3px -0.3px 0px,
+    -0.3px 0.3px 0,
+    -0.3px -0.3px 0px,
+    0.3px 0px 0px,
+    0px 0.3px 0px,
+    -0.3px 0px 0px,
+    0px -0.3px 0px;
+  letter-spacing: 1px;
 }
 
-.twitter-bottom {
-  font-size: 35px;
+.twitter-button {
+  position: absolute;
+  font-size: 25px;
+  color: #4977bc;
+  margin-bottom: 30%;
+  top: 30%;
+  left: 50%;
 }
