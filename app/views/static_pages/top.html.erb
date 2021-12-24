@@ -1,15 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="top-wrapper">
-      <div class=" col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <div class="top-layout col-md-10 offset-md-1 col-lg-8 offset-lg-2">
         <h1 class="title">Namikki</h1>
-        <p class="text-center">伊良湖エリアのサーフィン日記共有サービスです</p>
+        <p class="top">伊良湖エリアのサーフィン日記共有サービスです</p>
         <%= link_to 'Namikkiを投稿する', new_board_path, class: 'board-link' %>
         <%= render 'shared/weather' %>
         <% if logged_in? %>
           <%= link_to 'まずプロフィールを登録する', edit_profile_path, class: 'board-link', style: 'margin-bottom: 20%' %>
         <% else %>
-          <%= link_to '登録する前にNamikkiを見てみる', boards_path, class: 'board-link', style: 'margin-bottom: 20%' %>
+          <%= link_to '登録する前にNamikkiを見てみる', boards_path, class: 'board-link', style: 'margin-bottom: 30%' %>
         <% end %>
     </div>
   </div>

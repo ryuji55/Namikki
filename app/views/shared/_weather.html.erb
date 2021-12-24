@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="weather-list">
-      <% @lists.first(4).each do |list| %>
+      <% @lists.first(40).each do |list| %>
      <div class="lists">
         <div class="list">
-          <%= list["dt_txt"].to_time.strftime('%m月 %d日''%a''%n''%H:%M')%>
+          <%= list["dt_txt"].to_time.strftime('%m/%d''%a''%n''%H:%M')%>
         </div>
         <div class="list">
           <%= list["weather"][0]["description"] %>
         </div>
         <div class="list">
-          <%= image_tag "http://openweathermap.org/img/w/#{list["weather"][0]["icon"]}.png", class: 'weather-img' %>
+          <%= image_tag "http://openweathermap.org/img/w/#{list["weather"][0]["icon"].chop}d.png", class: 'weather-img' %>
         </div>
         <div class="list-feelslike">
           <%= list["main"]["feels_like"].truncate.to_s + "℃" %><br>
