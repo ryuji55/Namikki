@@ -1,4 +1,9 @@
 //  コメントページ
+.comment-layout {
+  margin-bottom: 10%;
+  text-align: center;
+}
+
 .board-body {
   font-weight: bold;
   color: #092237;
@@ -13,6 +18,24 @@
 .comment-css {
   font-weight: bold;
   color: #092237;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.comment-name {
+  font-size: 120%;
+  margin-left: 10%;
+  margin-top: 3%;
+}
+
+td {
+  position: relative;
+}
+
+.js-delete-comment-button {
+  position: absolute;
+  top: 20%;
+  left: 82%;
 }
 
 // Namikkiページ
