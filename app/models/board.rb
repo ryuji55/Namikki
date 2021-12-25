@@ -13,18 +13,16 @@ class Board < ApplicationRecord
     # すでに「いいね」されているか検索
     temp = Notice.where(["visitor_id = ? and visited_id = ? and board_id = ? and action = ? ", current_user.id, user_id, id, 'favorite'])
     # いいねされていない場合のみ、通知レコードを作成
-    if temp.blank?
-      notice = current_user.active_notices.new(
-        board_id: id,
-        visited_id: user_id,
-        action: 'favorite'
-      )
+    return if temp.present?
+
+    notice = current_user.active_notices.new(
+      board_id: id,
+      visited_id: user_id,
+      action: 'favorite'
+    )
     # 自分の投稿に対するいいねの場合は、通知済みとする
-      notice.checked = true if notice.visitor_id == notice.visited_id
-      notice.save if notice.valid?
-    else
-      return
-    end
+    notice.checked = true if notice.visitor_id == notice.visited_id
+    notice.save if notice.valid?
   end
 
   def create_notice_comment!(current_user, comment_id)
