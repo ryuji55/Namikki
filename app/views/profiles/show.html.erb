@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-10 offset-lg-1">
+    <div class="mypage-layout col-lg-10 offset-lg-1">
       <h1><%= current_user.name %></h1>
       <% if @user.avatar.url.present? %>
         <%= image_tag @user.avatar.url, class: 'avatar-img', size: '300x200' %>
@@ -14,7 +14,7 @@
         <p>はじめたきっかけ</p>
         <%= @user.reason %>
       </div>
-      <div class="form-links">
+      <div class="profile-link">
         <%= link_to 'プロフィール編集ページ', edit_profile_path %>
       </div>
     </div>

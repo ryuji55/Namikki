@@ -11,15 +11,15 @@ h1.title {
   text-align: center;
   font-family: 'Tsukushi B Round Gothic';
   font-weight: bold;
-  margin-bottom: 10%;
+  margin-bottom: 20%;
 }
 
 h1 {
   color: #092237;
   font-weight: bold;
   text-align: center;
-  margin-top: 10%;
-  margin-bottom: 5%;
+  margin-top: 20%;
+  margin-bottom: 20%;
 }
 
 p {
@@ -27,7 +27,7 @@ p {
   font-family: Klee;
 }
 
-p.top {
+p.overview {
   margin-bottom: 20%;
 }
 
@@ -50,7 +50,7 @@ p.top {
  
 // form
 textarea.form-control {
-  margin-bottom: 10px;
+  margin-bottom: 5%;
   margin-left: auto;
   margin-right: auto;
   width: 60%;
@@ -64,7 +64,32 @@ textarea.form-control {
 
 .actions {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 20%;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 24px;
+  text-decoration: none;
+  border: 1px;
+  background: #c9be72;
+  color: #092237;
+  box-shadow: 0px 2px 4px #a69940;
+  transition: box-shadow .3s;
+  border-radius: 10px;
+  margin-bottom: 10%;
+  font-family: Klee;
+  text-shadow: 
+    0.3px 0.3px 0, 
+    0.3px -0.3px 0px,
+    -0.3px 0.3px 0,
+    -0.3px -0.3px 0px,
+    0.3px 0px 0px,
+    0px 0.3px 0px,
+    -0.3px 0px 0px,
+    0px -0.3px 0px;
+  letter-spacing: 1px;
+  margin-top: 5%;
 }
 
 a {
@@ -83,47 +108,104 @@ a {
   letter-spacing: 1px;
 }
 
-.form-links {
+.pwreset-link {
+  margin-bottom: 5%;
   text-align: center;
-  padding-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.signup-link {
+  margin-bottom: 30%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-link {
+  margin-bottom: 30%;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
 
 input[type="text"] {
-  margin-bottom: 10px;
+  margin-bottom: 5%;
   margin-left: auto;
   margin-right: auto;
   width: 60%;
 }
 
 input[type="password"] {
-  margin-bottom: 10px;
+  margin-bottom: 5%;
   margin-left: auto;
   margin-right: auto;
   width: 60%;
 }
 
 input[type="email"] {
-  margin-bottom: 10px;
+  margin-bottom: 5%;
   margin-left: auto;
   margin-right: auto;
   width: 60%;
 }
 
 input[type="file"] {
-  margin-bottom: 10px;
+  margin-bottom: 5%; 
   margin-left: auto;
   margin-right: auto;
   width: 60%;
+  display: none;
+}
+
+label {
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  cursor: pointer;
+  text-indent: 0.01px;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  color: #666666;
+  position: relative;
+  border: 1px solid #bbbbbb;
+  border-radius: 2px;
+  background: #ffffff;
+  padding: 8px 38px 8px 8px;
+  color: #666666;
 }
 
 select {
-  margin-bottom: 10px;
+  margin-bottom: 5%;
   margin-left: auto;
   margin-right: auto;
   width: 60%;
+  cursor: pointer;
+  text-indent: 0.01px;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  color: #666666;
+  position: relative;
+  border: 1px solid #bbbbbb;
+  border-radius: 2px;
+  background: #ffffff;
+  padding: 8px 38px 8px 8px;
+  color: #666666;
 }
+
 
 // flash-messages
 #flash-message {

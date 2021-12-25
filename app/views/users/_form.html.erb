@@ -9,7 +9,7 @@
     <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレス' %>
   </div>
   <div class="form-group">
-    <%= f.password_field :password, class: 'form-control', placeholder: 'パスワード 4文字以上入力してください' %>
+    <%= f.password_field :password, class: 'form-control', placeholder: 'パスワード ※4文字以上入力してください' %>
   </div>
   <div class="form-group">
     <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'パスワード確認' %>
@@ -17,7 +17,7 @@
   <div class="actions">
   <%= f.submit '登録', class: 'btn btn-primary' %>
   </div>
-  <div class='form-links'>
+  <div class='login-link'>
     <%= link_to 'すでに登録がお済みの方はこちら', login_path %>
   </div>
 <% end %>

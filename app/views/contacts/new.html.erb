@@ -11,15 +11,18 @@
             <%= f.text_field :title, class: "form-control", placeholder: "タイトル"%>
           </div>          
           <div class="form-group">
-            <%= f.text_area :body, class: "form-control", placeholder: "お問い合わせ内容"%>
+            <%= f.text_area :body, class: "form-control", placeholder: "お問い合わせ内容" %>
           </div>
           <div class="actions">
             <%= f.submit '送信', class: "btn btn-primary" %>
           </div>
-          <div class='form-links'>
-            <%= link_to 'パスワードをお忘れの方はこちら', new_password_reset_path %><br />
+          <div class='pwreset-link'>
+            <%= link_to 'パスワードをお忘れの方はこちら', new_password_reset_path %>
+          </div>
+          <div class='signup-link'>
             <%= link_to 'ユーザー登録がまだお済みでない方はこちら', new_user_path %>
             <%= link_to 'ログアウトをしたい方はこちら', logout_path, method: :delete, data: { confirm: 'ログアウトしますか？' }, class: 'nav-link' %>
+          </div>
           </div>
         <% end %>
       </div>

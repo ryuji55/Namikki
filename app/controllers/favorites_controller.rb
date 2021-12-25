@@ -2,8 +2,8 @@ class FavoritesController < ApplicationController
   before_action :set_board
 
   def create
-      @favorite = current_user.favorites.create(board_id: params[:board_id])
-      @board.create_notice_favorite!(current_user)
+    @favorite = current_user.favorites.create(board_id: params[:board_id])
+    @board.create_notice_favorite!(current_user)
   end
 
   def destroy
