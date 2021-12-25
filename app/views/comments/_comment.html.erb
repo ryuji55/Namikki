@@ -8,6 +8,7 @@
     <h3 class="comment-name comments-css small"><%= comment.user.name %></h3>
     <div id="js-comment-<%= comment.id %>">
       <%= simple_format(comment.body, class: 'comment-css') %>
+      <p class='comment-time'><%= time_ago_in_words(comment.created_at).upcase %>前</p>
     </div>
     <div id="js-textarea-comment-box-<%= comment.id %>" style="display: none;">
       <textarea id="js-textarea-comment-<%= comment.id %>" class="form-control mb-1"><%= comment.body %></textarea>

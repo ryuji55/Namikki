@@ -5,6 +5,7 @@
 }
 
 .board-body {
+  font-size: 150%;
   font-weight: bold;
   color: #092237;
 }
@@ -19,6 +20,11 @@
   font-weight: bold;
   color: #092237;
   margin-left: 10%;
+  margin-right: 10%;
+}
+
+.comment-time {
+  float: right;
   margin-right: 10%;
 }
 
@@ -86,5 +92,5 @@ td {
 
 // 投稿削除ボタン
 .crud-menu-btn {
-  float: left; 
+  float: left;
 }
