@@ -29,6 +29,16 @@ p {
 
 p.overview {
   margin-bottom: 20%;
+  text-shadow: 
+    0.3px 0.3px 0, 
+    0.3px -0.3px 0px,
+    -0.3px 0.3px 0,
+    -0.3px -0.3px 0px,
+    0.3px 0px 0px,
+    0px 0.3px 0px,
+    -0.3px 0px 0px,
+    0px -0.3px 0px;
+  letter-spacing: 1px;
 }
 
 .top-layout {
