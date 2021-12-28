@@ -17,15 +17,34 @@
 }
 
 .comment-css {
-  font-weight: bold;
   color: #092237;
   margin-left: 10%;
   margin-right: 10%;
+  text-shadow: 
+    0.3px 0.3px 0, 
+    0.3px -0.3px 0px,
+    -0.3px 0.3px 0,
+    -0.3px -0.3px 0px,
+    0.3px 0px 0px,
+    0px 0.3px 0px,
+    -0.3px 0px 0px,
+    0px -0.3px 0px;
+  letter-spacing: 1px;
 }
 
 .comment-time {
   float: right;
   margin-right: 10%;
+  text-shadow: 
+    0.3px 0.3px 0, 
+    0.3px -0.3px 0px,
+    -0.3px 0.3px 0,
+    -0.3px -0.3px 0px,
+    0.3px 0px 0px,
+    0px 0.3px 0px,
+    -0.3px 0px 0px,
+    0px -0.3px 0px;
+  letter-spacing: 1px;
 }
 
 .comment-name {

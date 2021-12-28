@@ -13,12 +13,18 @@
     <%= f.text_area :body, class: 'form-control', placeholder: 'コメント', maxlength: '150' %>
   </div>
   <div class="form-group">
-    <label>
-      + 思い出の写真
-      <%= f.file_field :image, class: 'form-control' %>
+    <label for="file-select">
+      <div class="file-name">+ 思い出の写真</div>
+      <%= f.file_field :image, class: 'form-control', id: 'file-select', onchange: 'changeFileName()' %>
     </label>
   </div>
   <div class="actions">
     <%= f.submit '投稿', class: 'btn btn-primary' %>
   </div>
 <% end %>
+<script>
+function changeFileName() {
+  let fileName = document.querySelector('.file-name');
+  fileName.innerHTML = '<i class="far fa-check-square"></i> 選択しました';
+}
+</script>

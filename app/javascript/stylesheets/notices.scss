@@ -1,5 +1,15 @@
 .notice-time {
   text-align: right;
+  text-shadow: 
+    0.3px 0.3px 0, 
+    0.3px -0.3px 0px,
+    -0.3px 0.3px 0,
+    -0.3px -0.3px 0px,
+    0.3px 0px 0px,
+    0px 0.3px 0px,
+    -0.3px 0px 0px,
+    0px -0.3px 0px;
+  letter-spacing: 1px;
 }
 
 .n-circle {
