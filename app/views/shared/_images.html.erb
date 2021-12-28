@@ -2,11 +2,12 @@
 <% when "雲" %>
   <%= image_tag(asset_pack_path("media/images/cloud.jpeg")) %>
 <% when "曇りがち" %>
-  <%= image_tag(asset_pack_path("media/images/thickcloud.jpeg")) %>
-<% when "薄い雲" %>
-  <%= image_tag(asset_pack_path("media/images/thickcloud.jpeg")) %>
+  <%= image_tag(asset_pack_path("media/images/showerrain.jpeg")) %>
   <%= javascript_pack_tag 'weathers/rainfall' %>
   <%= stylesheet_pack_tag 'weathers/rainfall' %>
+  <%= render 'shared/rainfall' %>
+<% when "薄い雲" %>
+  <%= image_tag(asset_pack_path("media/images/thickcloud.jpeg")) %>
 <% when "厚い雲" %>
   <%= image_tag(asset_pack_path("media/images/thickcloud.jpeg")) %>
 <% when "小雨" %>
