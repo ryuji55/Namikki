@@ -1,2 +1,2 @@
-require("src/snow")
+require("src/rain")
 import "../../src/snowfall.jquery.min.js"
