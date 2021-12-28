@@ -20,9 +20,13 @@
 <% when "晴天" %>
   <%= image_tag(asset_pack_path("media/images/sun.jpeg")) %>
 <% when "雪" %>
-  <%= image_tag(asset_pack_path("media/images/snow.jpeg")) %>
+  <%= image_tag(asset_pack_path("media/images/thickcloud.jpeg")) %>
+  <%= javascript_pack_tag 'weathers/snowfall' %>
+  <%= stylesheet_pack_tag 'weathers/snowfall' %>
 <% when "小雪" %>
-  <%= image_tag(asset_pack_path("media/images/snow.jpeg")) %>
+  <%= image_tag(asset_pack_path("media/images/thickcloud.jpeg")) %>
+  <%= javascript_pack_tag 'weathers/snowfall' %>
+  <%= stylesheet_pack_tag 'weathers/snowfall' %>
 <% when "霧" %>
   <%= image_tag(asset_pack_path("media/images/mist.jpeg")) %>
 <% end %>
