@@ -2,27 +2,46 @@
 <% when "雲" %>
   <%= image_tag(asset_pack_path("media/images/cloud.jpeg")) %>
 <% when "曇りがち" %>
-  <%= image_tag(asset_pack_path("media/images/thickcloud.jpeg")) %>
+  <%= image_tag(asset_pack_path("media/images/bluecloud.jpeg")) %>
 <% when "薄い雲" %>
   <%= image_tag(asset_pack_path("media/images/thickcloud.jpeg")) %>
 <% when "厚い雲" %>
-  <%= image_tag(asset_pack_path("media/images/thickcloud.jpeg")) %>
+  <%= image_tag(asset_pack_path("media/images/cloud.jpeg")) %>
 <% when "小雨" %>
-  <%= image_tag(asset_pack_path("media/images/showerrain.jpeg")) %>
+  <%= image_tag(asset_pack_path("media/images/cloud.jpeg")) %>
+  <%= javascript_pack_tag 'weathers/rainfall' %>
+  <%= stylesheet_pack_tag 'weathers/rainfall' %>
+  <%= render 'shared/rainfall' %>
 <% when "適度な雨" %>
-  <%= image_tag(asset_pack_path("media/images/showerrain.jpeg")) %>
+  <%= image_tag(asset_pack_path("media/images/cloud.jpeg")) %>
+  <%= javascript_pack_tag 'weathers/rainfall' %>
+  <%= stylesheet_pack_tag 'weathers/rainfall' %>
+  <%= render 'shared/rainfall' %>
 <% when "雨" %>
-  <%= image_tag(asset_pack_path("media/images/showerrain.jpeg")) %>
+  <%= image_tag(asset_pack_path("media/images/cloud.jpeg")) %>
+  <%= javascript_pack_tag 'weathers/rainfall' %>
+  <%= stylesheet_pack_tag 'weathers/rainfall' %>
+  <%= render 'shared/rainfall' %>
 <% when "強い雨" %>
-  <%= image_tag(asset_pack_path("media/images/showerrain.jpeg")) %>
+  <%= image_tag(asset_pack_path("media/images/cloud.jpeg")) %>
+  <%= javascript_pack_tag 'weathers/rainfall' %>
+  <%= stylesheet_pack_tag 'weathers/rainfall' %>
+  <%= render 'shared/rainfall' %>
 <% when "雷雨" %>
-  <%= image_tag(asset_pack_path("media/images/showerrain.jpeg")) %>
+  <%= image_tag(asset_pack_path("media/images/bluecloud.jpeg")) %>
+  <%= javascript_pack_tag 'weathers/thunder' %>
+  <%= stylesheet_pack_tag 'weathers/thunder' %>
+  <%= render 'shared/thunder' %>
 <% when "晴天" %>
   <%= image_tag(asset_pack_path("media/images/sun.jpeg")) %>
 <% when "雪" %>
-  <%= image_tag(asset_pack_path("media/images/snow.jpeg")) %>
+  <%= image_tag(asset_pack_path("media/images/thickcloud.jpeg")) %>
+  <%= javascript_pack_tag 'weathers/snowfall' %>
+  <%= stylesheet_pack_tag 'weathers/snowfall' %>
 <% when "小雪" %>
-  <%= image_tag(asset_pack_path("media/images/snow.jpeg")) %>
+  <%= image_tag(asset_pack_path("media/images/thickcloud.jpeg")) %>
+  <%= javascript_pack_tag 'weathers/snowfall' %>
+  <%= stylesheet_pack_tag 'weathers/snowfall' %>
 <% when "霧" %>
   <%= image_tag(asset_pack_path("media/images/mist.jpeg")) %>
 <% end %>
