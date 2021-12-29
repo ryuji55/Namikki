@@ -6,10 +6,7 @@
 <% when "薄い雲" %>
   <%= image_tag(asset_pack_path("media/images/thickcloud.jpeg")) %>
 <% when "厚い雲" %>
-  <%= image_tag(asset_pack_path("media/images/showerrain.jpeg")) %>
-  <%= javascript_pack_tag 'weathers/thunder' %>
-  <%= stylesheet_pack_tag 'weathers/thunder' %>
-  <%= render 'shared/thunder' %>
+  <%= image_tag(asset_pack_path("media/images/cloud.jpeg")) %>
 <% when "小雨" %>
   <%= image_tag(asset_pack_path("media/images/showerrain.jpeg")) %>
   <%= javascript_pack_tag 'weathers/rainfall' %>
