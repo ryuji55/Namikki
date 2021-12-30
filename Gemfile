@@ -30,7 +30,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'cancancan'
 gem 'carrierwave'
 gem 'config'
-gem 'fog'
+gem 'fog-aws'
 gem 'kaminari'
 gem 'mini_magick'
 gem 'rails_admin'
