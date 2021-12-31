@@ -36,8 +36,10 @@
   <%= image_tag(asset_pack_path("media/images/sun.jpeg")) %>
 <% when "雪" %>
   <%= image_tag(asset_pack_path("media/images/thickcloud.jpeg")) %>
+  <%= javascript_pack_tag 'weathers/snowfall' %>
 <% when "小雪" %>
   <%= image_tag(asset_pack_path("media/images/thickcloud.jpeg")) %>
+  <%= javascript_pack_tag 'weathers/snowfall' %>
 <% when "霧" %>
   <%= image_tag(asset_pack_path("media/images/mist.jpeg")) %>
 <% end %>
