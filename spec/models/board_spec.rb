@@ -6,6 +6,7 @@ RSpec.describe Board, type: :model do
     context '正常系' do
       it 'ポイントと波のサイズが選択されていれば投稿ができる' do
         expect(board.valid?).to eq(true)
+        expect(board.errors).to be_empty
       end
     end
     context '異常系' do

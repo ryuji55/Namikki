@@ -3,6 +3,7 @@ FactoryBot.define do
     body { "テストコメント" }
     user_id { 1 }
     board_id { 1 }
-    association :user, :board, :notices
+    association :user
+    association :board
   end
 end
