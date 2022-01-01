@@ -79,6 +79,10 @@ Metrics/PerceivedComplexity:
 
 Metrics/AbcSize:
   Max: 25
+    
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
 
 # Offense count: 3
 # Configuration parameters: AllowedConstants.
