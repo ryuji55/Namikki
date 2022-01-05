@@ -196,7 +196,7 @@ RSpec.describe "Users", type: :system do
 
     describe 'プロフィール編集機能' do
       context 'フォームの入力値が正常' do
-        fit 'フォーム全項目入力したらプロフィールの編集が行える' do
+        it 'フォーム全項目入力したらプロフィールの編集が行える' do
           avatar_path = Rails.root.join('spec/fixtures/image/test.jpeg').to_s
           execute_script('window.scrollBy(0,800)')
           sleep 1
