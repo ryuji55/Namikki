@@ -15,10 +15,10 @@ RSpec.describe Comment, type: :model do
         expect(comment.valid?).to eq(false)
         expect(comment.errors.full_messages).to include("コメントを入力してください")
       end
-      it 'コメントが201文字以上ならバリデーションが成功する' do
-        comment.body = 'あ' * 201
+      it 'コメントが151文字以上ならバリデーションが成功する' do
+        comment.body = 'あ' * 151
         expect(comment.valid?).to eq(false)
-        expect(comment.errors.full_messages).to include("コメントは200文字以内で入力してください")
+        expect(comment.errors.full_messages).to include("コメントは150文字以内で入力してください")
       end
     end
   end
