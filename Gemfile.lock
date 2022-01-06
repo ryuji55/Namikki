@@ -474,6 +474,7 @@ DEPENDENCIES
   rubocop
   rubocop-rails
   sass-rails (>= 6)
+  selenium-webdriver
   sorcery
   spring
   tzinfo-data
