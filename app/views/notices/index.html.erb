@@ -7,8 +7,10 @@
     <div class="row">
       <% notices = @notices.where.not(visitor_id: current_user.id) %>
       <% if notices.exists? %>
+        <p class="notice-p">通知一覧</p>
         <%= render notices %>
       <% else %>
+        <p class="notice-p">通知一覧</p>
         <p> 通知はありません </p>
       <% end %>
       <%= paginate notices %>
