@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="mypage-layout col-lg-10 offset-lg-1">
+      <h1 class="title"><%= @user.name %></h1>
+      <% if @user.avatar.url.present? %>
+        <%= image_tag @user.avatar.url, class: 'avatar-img', size: '300x200' %>
+      <% else %>
+        <%= image_tag(asset_pack_path("media/images/sample.jpg"), class: 'avatar-img') %>
+      <% end %>
+      <div class="history">
+        <p>サーフィン歴<%= @user.history %>年</p>
+      </div>
+      <div class="reason">
+        <p>はじめたきっかけ</p>
+        <%= @user.reason %>
+      </div>
+    </div>
+  </div>
+  <div class="board-list jscroll">
+    <div class="row">
+      <% if @boards.present? %>
+        <%= render partial: 'shared/mypage', collection: @boards, as: 'board' %>
+      <% else %>
+        <p>投稿はありません</p>
+      <% end %>
+      <%= paginate @boards %>
+    </div>
+  </div>
+</div>

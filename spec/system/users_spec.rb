@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "Users", type: :system do
   let(:user) { build(:user) }
   let!(:board) { create(:board) }
+  let(:comment) { build(:comment) }
 
   describe 'ログイン前' do
     before do
@@ -190,6 +191,112 @@ RSpec.describe "Users", type: :system do
           visit boards_path
           find('.card').click
           expect(current_path).to eq board_path(board)
+        end
+      end
+
+      context '他者のコメントページからユーザー詳細ページにアクセス' do
+        it 'ユーザー名をクリックするとユーザー詳細ページが表示される' do
+          visit boards_path
+          find('.card').click
+          find('.title').click
+          expect(current_path).to eq user_path(board.user)
+        end
+        it 'ユーザーアイコンをクリックするとユーザー詳細ページが表示される' do
+          visit boards_path
+          find('.card').click
+          find('.avatar-img').click
+          expect(current_path).to eq user_path(board.user)
+        end
+      end
+
+      context '自身のコメントページからMypageにアクセス' do
+        it 'ユーザー名をクリックするとプロフィールページが表示される' do
+          visit new_board_path
+          select "ロコ", from: "board_point"
+          select "フラット", from: "board_wave_size"
+          execute_script('window.scrollBy(0,800)')
+          fill_in "コメント", with: "二つ目の投稿"
+          click_on "投稿"
+          click_on "ロコ"
+          find('.title').click
+          expect(current_path).to eq profile_path
+        end
+        it 'ユーザーのアイコンをクリックするとプロフィールページが表示される' do
+          visit new_board_path
+          select "ロコ", from: "board_point"
+          select "フラット", from: "board_wave_size"
+          execute_script('window.scrollBy(0,800)')
+          fill_in "コメント", with: "二つ目の投稿"
+          click_on "投稿"
+          click_on "ロコ"
+          find('.avatar-img').click
+          expect(current_path).to eq profile_path
+        end
+      end
+
+      context '他者のコメントからユーザー詳細ページへアクセス' do
+        it 'コメントの名前をクリックするとユーザー詳細ページが表示される' do
+          visit boards_path
+          click_on 'ロングビーチ'
+          execute_script('window.scrollBy(0,2000)')
+          sleep 2
+          fill_in 'コメント ※150文字まで', with: 'テストコメント'
+          click_on '投稿'
+          visit new_user_path
+          fill_in 'ニックネーム', with: 'test2'
+          fill_in 'メールアドレス', with: 'test2@exanple.com'
+          fill_in 'パスワード     ※4文字以上', with: "password"
+          fill_in 'パスワード確認', with: "password"
+          click_button '登録'
+          visit boards_path
+          click_on 'ロングビーチ'
+          execute_script('window.scrollBy(0,2000)')
+          sleep 2
+          find('.comment-name').click
+          expect(current_path).to eq user_path(board.user)
+        end
+        it 'コメントのアイコンをクリックするとユーザー詳細ページが表示される' do
+          visit boards_path
+          click_on 'ロングビーチ'
+          execute_script('window.scrollBy(0,2000)')
+          sleep 2
+          fill_in 'コメント ※150文字まで', with: 'テストコメント'
+          click_on '投稿'
+          visit new_user_path
+          fill_in 'ニックネーム', with: 'test2'
+          fill_in 'メールアドレス', with: 'test2@exanple.com'
+          fill_in 'パスワード     ※4文字以上', with: "password"
+          fill_in 'パスワード確認', with: "password"
+          click_button '登録'
+          visit boards_path
+          click_on 'ロングビーチ'
+          execute_script('window.scrollBy(0,2000)')
+          sleep 2
+          find('.comment-avatar-img').click
+          expect(current_path).to eq user_path(board.user)
+        end
+      end
+
+      context '自身のコメントからプロフィールページへアクセス' do
+        it 'コメントの名前をクリックするとするとプロフィールページが表示される' do
+          visit boards_path
+          click_on 'ロングビーチ'
+          execute_script('window.scrollBy(0,2000)')
+          sleep 2
+          fill_in 'コメント ※150文字まで', with: 'テストコメント'
+          click_on '投稿'
+          find('.comment-name').click
+          expect(current_path).to eq profile_path
+        end
+        it 'コメントのアイコンをクリックするとプロフィールページが表示される' do
+          visit boards_path
+          click_on 'ロングビーチ'
+          execute_script('window.scrollBy(0,2000)')
+          sleep 2
+          fill_in 'コメント ※150文字まで', with: 'テストコメント'
+          click_on '投稿'
+          find('.comment-avatar-img').click
+          expect(current_path).to eq profile_path
         end
       end
     end
