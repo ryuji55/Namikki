@@ -1,11 +1,13 @@
 <tr id="comment-<%= comment.id %>">
   <td>
+    <%= link_to current_user.own?(comment) ? profile_path : user_path(@board.user) do %>
       <% if comment.user.avatar.url.present? %>
         <%= image_tag comment.user.avatar.url, class: 'comment-avatar-img' %>
       <% else %>
         <%= image_tag(asset_pack_path("media/images/sample.jpg"), class: 'comment-avatar-img') %>
       <% end %>
     <h3 class="comment-name comments-css small"><%= comment.user.name %></h3>
+  <% end %>
     <div id="js-comment-<%= comment.id %>">
       <%= simple_format(comment.body, class: 'comment-css') %>
       <p class='comment-time'><%= time_ago_in_words(comment.created_at).upcase %>前</p>
