@@ -192,6 +192,46 @@ RSpec.describe "Users", type: :system do
           expect(current_path).to eq board_path(board)
         end
       end
+
+      context '他者のコメントページからユーザー詳細ページにアクセス' do
+        it 'ユーザー名をクリックするとユーザー詳細ページが表示される' do
+          visit boards_path
+          find('.card').click
+          find('.title').click
+          expect(current_path).to eq user_path(board.user)
+        end
+        it 'ユーザーアイコンをクリックするとユーザー詳細ページが表示される' do
+          visit boards_path
+          find('.card').click
+          find('.avatar-img').click
+          expect(current_path).to eq user_path(board.user)
+        end
+      end
+
+      context '自身のコメントページからMypageにアクセス' do
+        it 'ユーザー名をクリックするとプロフィールページが表示される' do
+          visit new_board_path
+          select "ロコ", from: "board_point"
+          select "フラット", from: "board_wave_size"
+          execute_script('window.scrollBy(0,800)')
+          fill_in "コメント", with: "二つ目の投稿"
+          click_on "投稿"
+          click_on "ロコ"
+          find('.title').click
+          expect(current_path).to eq profile_path
+        end
+        it 'ユーザーのアイコンをクリックするとプロフィールページが表示される' do
+          visit new_board_path
+          select "ロコ", from: "board_point"
+          select "フラット", from: "board_wave_size"
+          execute_script('window.scrollBy(0,800)')
+          fill_in "コメント", with: "二つ目の投稿"
+          click_on "投稿"
+          click_on "ロコ"
+          find('.avatar-img').click
+          expect(current_path).to eq profile_path
+        end
+      end
     end
 
     describe 'プロフィール編集機能' do
